@@ -22,3 +22,4 @@ Contribuições são sempre bem-vindas! Se você tiver alguma sugestão, correç
 
 <img width="960" alt="feedignite" src="https://github.com/Guilhermefonseca2021/Ignite_feed/assets/92196697/fbefc99a-0af1-4f4d-8ee9-6a5a23a3c37f">
 
+![feedmobile](https://github.com/Guilhermefonseca2021/Ignite_feed/assets/92196697/33177a85-283e-4c6e-9a88-cab8b565b512)
