@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 
 export function Post({ author, publishedAt, content }) {
-    const [comments, setComments] = useState(['Post muito bacana, hein!?'])
+    const [comments, setComments] = useState(['Post bacana hein!? obgd devon'])
 
     const [newCommentText, setNewCommentText] = useState('')
 
@@ -31,7 +31,12 @@ export function Post({ author, publishedAt, content }) {
     }
 
     function handleNewCommentChange(event) {
+        event.target.setCustomValidity('');
         setNewCommentText(event.target.value);
+    }
+
+    function handleNewCommentInvalid() {
+        event.target.setCustomValidity('Esse campo é obrigatorio!');
     }
 
     function deleteComment(commentToDelete) {
@@ -42,6 +47,8 @@ export function Post({ author, publishedAt, content }) {
 
         setComments(commentsWithoutDeletedOne );
     }
+
+    const isNewCommentInputEmpty = newCommentText.length === 0;
 
     return (
         <article className={styles.post}>
@@ -77,10 +84,14 @@ export function Post({ author, publishedAt, content }) {
                     placeholder="Deixe seu comentario"
                     value={newCommentText}
                     onChange={handleNewCommentChange}
+                    onInvalid={handleNewCommentInvalid}
+                    required
                 />
                 
                 <footer>
-                    <button type='submit'>Publicar</button>
+                    <button type='submit' disabled={isNewCommentInputEmpty}>
+                        Publicar
+                    </button>
                 </footer>
             </form>
 
